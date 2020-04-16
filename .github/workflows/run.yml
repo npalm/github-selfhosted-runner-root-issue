@@ -17,4 +17,4 @@ jobs:
           ./gradlew assemble
       - name: test
         run: |
-          ./gradlew check jacocoTestReport
+          ./gradlew check
