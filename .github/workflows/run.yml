@@ -1,4 +1,4 @@
-name: Build
+name: Check out v2
 
 on: push
 
@@ -14,7 +14,4 @@ jobs:
       - uses: actions/checkout@v2
       - name: Build and test
         run: |
-          ./gradlew clean assemble
-      - name: test
-        run: |
-          ./gradlew check
+          ./gradlew assemble check
