@@ -3,18 +3,18 @@ name: Check out v2
 on: push
 
 jobs:
-  build:
-    runs-on: self-hosted
-    container:
-      image: openjdk:11.0.6-jdk-slim
-    env:
-      ACTIONS_RUNNER_DEBUG: true
+  # build:
+  #   runs-on: self-hosted
+  #   container:
+  #     image: openjdk:11.0.6-jdk-slim
+  #   env:
+  #     ACTIONS_RUNNER_DEBUG: true
 
-    steps:
-      - uses: actions/checkout@v2
-      - name: Build and test
-        run: |
-          ./gradlew assemble check
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #     - name: Build and test
+  #       run: |
+  #         ./gradlew assemble check
 
   build2:
     runs-on: self-hosted
