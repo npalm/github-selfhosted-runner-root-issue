@@ -15,3 +15,18 @@ jobs:
       - name: Build and test
         run: |
           ./gradlew assemble check
+
+  build2:
+    runs-on: self-hosted
+    container:
+      image: openjdk:11.0.6-jdk-slim
+    env:
+      ACTIONS_RUNNER_DEBUG: true
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: Build and test
+        uses: docker://openjdk:11.0.6-jdk-slim
+        with:
+          entrypoint: bash
+          args: -c "./gradlew assemble check
